@@ -11,6 +11,9 @@ public class NativePageObject  {
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/email_sign_in_button")
     WebElement signInBtn;
 
+    @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/register_button")
+    WebElement registerBtn;
+
     public NativePageObject(AppiumDriver appiumDriver) {
         PageFactory.initElements( new AppiumFieldDecorator(appiumDriver), this);
     }
