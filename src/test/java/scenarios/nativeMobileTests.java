@@ -11,18 +11,20 @@ import java.util.concurrent.TimeUnit;
 
 public class nativeMobileTests extends BaseTest {
 
-    @Test(groups = {"native"}, description = "This simple test just click on the Sign In button")
+   /* @Test(groups = {"native"}, description = "This simple test just click on the Sign In button")
     public void simpleNativeTest() throws IllegalAccessException, NoSuchFieldException, InstantiationException {
         System.out.println("Hello");
         getPo().getWelement("signInBtn").click();
         System.out.println("Simplest Android native test done");
+    }*/
 
-    }
-
-    @Test(groups = {"native"}, description = "Test to register")
+   @Test(groups = {"native"}, description = "Test to register")
     public void registerTest() throws IllegalAccessException, NoSuchFieldException, InstantiationException {
-         new WebDriverWait(getDriver(), 20).until(ExpectedConditions.elementToBeClickable(getPo().getWelement("registerBtn")));
-       // getPo().getWelement("registerBtn").click();
+        // new WebDriverWait(getDriver(), 20).until(ExpectedConditions.elementToBeClickable(getPo().getWelement("registerBtn")));
+        // new WebDriverWait(getDriver(), 20).until(ExpectedConditions.invisibilityOf(getPo().getWelement("registerBtn")));
+
+
+        getPo().getWelement("registerBtn").click();
         System.out.println("New page opened");
         getPo().getWelement("email").sendKeys("hello@mail.ru");
         getPo().getWelement("username").sendKeys("helloWorld");
@@ -35,7 +37,7 @@ public class nativeMobileTests extends BaseTest {
         getPo().getWelement("loginPassword").sendKeys("12345678");
         getPo().getWelement("signInBtn").click();
         Assert.assertEquals(getPo().getWelement("budgetActivityTitle").getText(), "BudgetActivity");
-        Assert.assertEquals(getPo().getWelement(getDriver().getTitle()), "BudgetActivity");
+//        Assert.assertEquals(getPo().getWelement(getDriver().getTitle()), "BudgetActivity");
     }
 
 
