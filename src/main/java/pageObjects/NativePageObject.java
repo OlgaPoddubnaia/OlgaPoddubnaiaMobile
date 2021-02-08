@@ -6,7 +6,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class NativePageObject  {
+public class NativePageObject {
 
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/email_sign_in_button")
     WebElement signInBtn;
@@ -17,14 +17,9 @@ public class NativePageObject  {
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/login_email")
     WebElement loginEmail;
 
-     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/login_pwd")
+    @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/login_pwd")
     WebElement loginPassword;
 
-  /*  public NativePageObject(AppiumDriver appiumDriver) {
-        super(appiumDriver);
-    }*/
-
-    //проверка
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/registration_email")
     WebElement email;
 
@@ -50,9 +45,9 @@ public class NativePageObject  {
             ".widget.TextView")
     WebElement budgetActivityTitle;
 
-   public NativePageObject(AppiumDriver appiumDriver) {
-       PageFactory.initElements( new AppiumFieldDecorator(appiumDriver), this);
-   }
+    public NativePageObject(AppiumDriver appiumDriver) {
+        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
+    }
 
 
 }
