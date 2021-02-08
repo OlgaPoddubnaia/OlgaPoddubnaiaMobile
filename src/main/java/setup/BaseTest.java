@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest implements IDriver {
+public class BaseTest extends ConfProperties implements IDriver {
 
     private static AppiumDriver appiumDriver; // singleton
     IPageObject po;
