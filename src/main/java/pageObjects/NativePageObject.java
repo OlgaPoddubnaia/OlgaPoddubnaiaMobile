@@ -48,6 +48,4 @@ public class NativePageObject {
     public NativePageObject(AppiumDriver appiumDriver) {
         PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
     }
-
-
 }

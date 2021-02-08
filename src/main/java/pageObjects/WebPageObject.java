@@ -16,9 +16,8 @@ public class WebPageObject {
     @FindBy(xpath = "//div[@role='heading']/div[contains(text(),'EPAM')]")
     private WebElement resultString;
 
-@FindBy(css = " ul > li")
+    @FindBy(css = " ul > li")
     private WebElement chooseFirstResult;
-
 
     public WebPageObject(AppiumDriver appiumDriver) {
         PageFactory.initElements(appiumDriver, this);
