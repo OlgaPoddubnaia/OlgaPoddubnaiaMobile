@@ -21,8 +21,8 @@ public class nativeMobileTests extends BaseTest {
 
     @Test(groups = {"native"}, description = "Test to register")
     public void registerTest() throws IllegalAccessException, NoSuchFieldException, InstantiationException {
-        // new WebDriverWait(getDriver(), 20).until(ExpectedConditions.elementToBeClickable(getPo().getWelement("registerBtn")));
-        getPo().getWelement("registerBtn").click();
+         new WebDriverWait(getDriver(), 20).until(ExpectedConditions.elementToBeClickable(getPo().getWelement("registerBtn")));
+       // getPo().getWelement("registerBtn").click();
         System.out.println("New page opened");
         getPo().getWelement("email").sendKeys("hello@mail.ru");
         getPo().getWelement("username").sendKeys("helloWorld");
