@@ -4,11 +4,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+import pageObjects.GoogleWebPageObject;
 import setup.BaseTest;
 
 public class webMobileTests extends BaseTest {
+    GoogleWebPageObject googleWebPageObject;
 
-    @Test(groups = {"web"}, description = "Make sure that we've opened IANA homepage")
+   /* @Test(groups = {"web"}, description = "Make sure that we've opened IANA homepage")
     public void simpleWebTest() throws InterruptedException {
         getDriver().get("http://iana.org"); // open IANA homepage
 
@@ -22,8 +24,9 @@ public class webMobileTests extends BaseTest {
 
         // Log that test finished
         System.out.println("Site opening done");
-    }
- @Test(groups = {"web"}, description = "Make sure that we've opened found some EPAM result on page")
+    }*/
+
+    @Test(groups = {"web"}, description = "Make sure that we've opened found some EPAM result on page")
     public void simpleGoogleSearchTest() throws InterruptedException {
         getDriver().get("https://www.google.com/"); // open Google homepage
 
@@ -35,7 +38,9 @@ public class webMobileTests extends BaseTest {
         // Check Google homepage title
         assert ((WebDriver) getDriver()).getTitle().equals("Google") : "This is not Google homepage";
 
-
+        //sending keys
+       // getDriver().get("searchField");
+       // googleWebPageObject.inputSearch("EPAM");
     }
 
 }
