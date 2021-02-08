@@ -23,5 +23,19 @@ public class webMobileTests extends BaseTest {
         // Log that test finished
         System.out.println("Site opening done");
     }
+ @Test(groups = {"web"}, description = "Make sure that we've opened found some EPAM result on page")
+    public void simpleGoogleSearchTest() throws InterruptedException {
+        getDriver().get("https://www.google.com/"); // open Google homepage
+
+        // Make sure that page has been loaded completely
+        new WebDriverWait(getDriver(), 20).until(
+                wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete")
+        );
+
+        // Check Google homepage title
+        assert ((WebDriver) getDriver()).getTitle().equals("Google") : "This is not Google homepage";
+
+
+    }
 
 }
