@@ -86,5 +86,25 @@
                 <suite.file>./src/test/resources/cloudWebTNG.xml</suite.file>
             </properties>
         </profile>
+
+         <profile>
+            <id>cloudNativeWeb</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>./src/test/resources/androidCloudNativeTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+   <profile>
+            <id>iOSNativeWeb</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>./src/test/resources/iosNativeTNG.xml</suite.file>
+            </properties>
+        </profile>
     </profiles>
 </project>
