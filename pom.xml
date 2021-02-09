@@ -23,7 +23,7 @@
 
     <properties>
         <token>
-           ENTER YOUR TOKEN HERE
+            ENTER YOUR TOKEN HERE
         </token>
     </properties>
 
@@ -74,6 +74,16 @@
             </activation>
             <properties>
                 <suite.file>./src/test/resources/webTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>cloudWeb</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>./src/test/resources/cloudWebTNG.xml</suite.file>
             </properties>
         </profile>
     </profiles>
