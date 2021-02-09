@@ -21,6 +21,13 @@
         </dependency>
     </dependencies>
 
+    <properties>
+        <token>
+           ENTER YOUR TOKEN HERE
+        </token>
+    </properties>
+
+
     <build>
         <plugins>
             <plugin>
@@ -32,7 +39,9 @@
                         <suiteXmlFile>${suite.file}</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-                        <ts.appium>http://localhost:4723/wd/hub</ts.appium>
+                        <!--  <ts.appium>http://localhost:4723/wd/hub</ts.appium>-->
+                        <!--было как выше-->
+                        <ts.appium>https://EPM-TSTF:${token}@mobilecloud.epam.com/wd/hub</ts.appium>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -68,6 +77,4 @@
             </properties>
         </profile>
     </profiles>
-
-
 </project>
