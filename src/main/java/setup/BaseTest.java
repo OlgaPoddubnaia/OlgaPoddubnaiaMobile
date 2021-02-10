@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest extends ConfProperties implements IDriver {
+public class BaseTest implements IDriver {
 
     private static AppiumDriver appiumDriver; // singleton
     IPageObject po;
@@ -24,19 +24,11 @@ public class BaseTest extends ConfProperties implements IDriver {
         return po;
     }
 
-    @Parameters({"platformName", "appType", "deviceName", "udid", "browserName", "app", "appPackage", "appActivity", "bundleId"})
+    @Parameters({"platformName", "appType", "deviceName", "browserName", "app"})
     @BeforeSuite(alwaysRun = true)
-    public void setUp(String platformName, String appType,
-                      @Optional("") String deviceName,
-                      @Optional("") String udid,
-                      @Optional("") String browserName,
-                      @Optional("") String app,
-                      @Optional("") String appPackage,
-                      @Optional("") String appActivity,
-                      @Optional("") String bundleId
-    ) throws Exception {
+    public void setUp(String platformName, String appType, String deviceName, @Optional("") String browserName, @Optional("") String app) throws Exception {
         System.out.println("Before: app type - " + appType);
-        setAppiumDriver(platformName, deviceName, udid, browserName, app, appPackage, appActivity, bundleId);
+        setAppiumDriver(platformName, deviceName, browserName, app);
         setPageObject(appType, appiumDriver);
 
     }
@@ -47,26 +39,16 @@ public class BaseTest extends ConfProperties implements IDriver {
         appiumDriver.closeApp();
     }
 
-    private void setAppiumDriver(String platformName, String deviceName,String udid,
-                                 String browserName, String app,String appPackage,
-                                 String appActivity,String bundleId) {
+    private void setAppiumDriver(String platformName, String deviceName, String browserName, String app) {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         //mandatory Android capabilities
         capabilities.setCapability("platformName", platformName);
         capabilities.setCapability("deviceName", deviceName);
-        capabilities.setCapability("udid", udid);
 
         if (app.endsWith(".apk")) capabilities.setCapability("app", (new File(app)).getAbsolutePath());
 
         capabilities.setCapability("browserName", browserName);
         capabilities.setCapability("chromedriverDisableBuildCheck", "true");
-
-        //Capabilities for test of Android native app on EPAM Mobile Cloud
-        capabilities.setCapability("appPackage",appPackage);
-        capabilities.setCapability("appActivity",appActivity);
-
-        //Capabilities for test of iOS native app on EPAM Mobile Cloud
-        capabilities.setCapability("bundleId",bundleId);
 
         try {
             appiumDriver = new AppiumDriver(new URL(System.getProperty("ts.appium")), capabilities);
@@ -82,6 +64,4 @@ public class BaseTest extends ConfProperties implements IDriver {
     private void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {
         po = new PageObject(appType, appiumDriver);
     }
-
-
 }
