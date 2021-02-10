@@ -14,7 +14,7 @@ public class webMobileTests extends BaseTest {
 
     @Test(groups = {"web"}, description = "Make sure that we've opened found some EPAM result on page")
     public void simpleGoogleSearchTest() throws InterruptedException, IllegalAccessException, NoSuchFieldException, InstantiationException {
-        getDriver().get("https://www.google.com/"); // open Google homepage
+        getDriver().get(ConfProperties.getProperty("URL")); // open Google homepage
 
         // Make sure that page has been loaded completely
         new WebDriverWait(getDriver(), 20).until(
