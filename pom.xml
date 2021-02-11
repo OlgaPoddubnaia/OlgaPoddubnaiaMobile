@@ -79,32 +79,42 @@
         </profile>
 
         <profile>
-            <id>cloudWeb</id>
+            <id>android-cloud-native</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <suite.file>./src/test/resources/cloudWebTNG.xml</suite.file>
-            </properties>
-        </profile>
-
-         <profile>
-            <id>cloudNativeWeb</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>./src/test/resources/androidCloudNativeTNG.xml</suite.file>
             </properties>
         </profile>
 
-   <profile>
-            <id>iOSNativeWeb</id>
+        <profile>
+            <id>android-cloud-web</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.file>./src/test/resources/iosNativeTNG.xml</suite.file>
+                <suite.file>./src/test/resources/androidCloudWebTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>ios-cloud-native</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>./src/test/resources/iOSCloudNativeTNG.xml</suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>ios-cloud-web</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>./src/test/resources/iOSCloudWebTNG.xml</suite.file>
             </properties>
         </profile>
     </profiles>
