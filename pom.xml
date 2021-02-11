@@ -91,7 +91,7 @@
         <profile>
             <id>android-cloud-web</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>./src/test/resources/androidCloudWebTNG.xml</suite.file>
@@ -111,7 +111,7 @@
         <profile>
             <id>ios-cloud-web</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <suite.file>./src/test/resources/iOSCloudWebTNG.xml</suite.file>
