@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 public class NativePageObject {
 
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/email_sign_in_button")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@label='Sign in']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@label='Sign In']")
     WebElement signInBtn;
 
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/register_button")
@@ -26,19 +26,19 @@ public class NativePageObject {
     WebElement loginPassword;
 
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/registration_email")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@label='Email']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@value='user@example.com']")
     WebElement email;
 
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/registration_username")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@label='Username']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@value='TimApple']")
     WebElement username;
 
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/registration_password")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField@label='Password']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@value='Required']")
     WebElement password;
 
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/registration_confirm_password")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField@label='Confirm password']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@value='Repeat please']")
     WebElement confirmPassword;
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget." +
@@ -54,11 +54,10 @@ public class NativePageObject {
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget." +
             "FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.view.ViewGroup/android" +
             ".widget.TextView")
-    // @iOSXCUITFindBy()
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@label='Budget']")
     WebElement budgetActivityTitle;
 
     public NativePageObject(AppiumDriver appiumDriver) {
         PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
     }
 }
-

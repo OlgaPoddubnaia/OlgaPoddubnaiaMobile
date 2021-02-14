@@ -32,7 +32,7 @@ public class nativeMobileTests extends BaseTest {
         System.out.println("Budget Activity page opened");
 
         //check is budget activity page opened
-        Assert.assertEquals(getPo().getWelement("budgetActivityTitle").getText(),
-                ConfProperties.getProperty("BUDGET_TITLE"));
+        Assert.assertTrue(getPo().getWelement("budgetActivityTitle").getText()
+                .contains(ConfProperties.getProperty("BUDGET_TITLE")));
     }
 }
